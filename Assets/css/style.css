@@ -17,3 +17,29 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+#timeLeft {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    transform: translate(-5%, -5%);
+    font-size: 30px;
+
+}
+#question p {
+    margin: 10px;
+}
+#question div button {
+    margin: 10px;
+    color: white;
+}
+#question {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#questionNumber {
+    display: flex;
+    justify-content: center;
+}

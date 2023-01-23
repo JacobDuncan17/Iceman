@@ -9,23 +9,30 @@
 </head>
 
 <body>
-    <div class="">
+    <div>
         <!-- Quiz button to start -->
             <div class="d-flex justify-content-center start_btn"><button class="bg-info border-0 rounded" id="quizbutton">Start Quiz</button></div>
 
             <!-- Quiz Box-->
-        
-            <div class="d-flex justify-content-center quizbox1">
+            <div class="d-flex justify-content-center">
                 <div class="card border-info" style="width: 30rem;" id="card1">
-                    <div class="card-header bg-info text-white"><span>Question 1</span></div>
-                    <div class="card-body">
+                    <div class="card-header bg-info text-white"><span id="questionNumber"></span></div>
+                    <div class="card-body" id="question">
+                        <p id="question1">test</p>
+                        <div><button class="bg-info border-0 rounded" id="option1"></button></div>
+                        <div><button class="bg-info border-0 rounded" id="option2"></button></div>
+                        <div><button class="bg-info border-0 rounded" id="option3"></button></div>
+                        <div><button class="bg-info border-0 rounded" id="option4"></button></div>
                         <!--Inserted question from js-->
                     </div>
-                    <div>
+                    
+                        
                         <!--Inserted options from js-->
                     </div>
                 </div>
             </div>
+
+            <div class="text-info" id="timeLeft"></div>
         
     </div>
     <script src="./Assets/js/script.js"></script>
