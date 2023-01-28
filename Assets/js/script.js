@@ -6,11 +6,19 @@ var option1 = document.querySelector("#option1");
 var option2 = document.querySelector("#option2");
 var option3 = document.querySelector("#option3");
 var option4 = document.querySelector("#option4");
-
+var highscoreBox = document.querySelector("#card2");
+var highscoreInput = document.querySelector("#scoreInput");
+var inputResult = document.querySelector("#result");
+var submitHS = document.querySelector("#submitforHS");
+var highscorebtn = document.querySelector("#highscorebtn");
+var highscorebox2 = document.querySelector("#card3");
+var highscoreboxText = document.querySelector("#highScoreBox");
 startquiz.onclick = ()=>{
     start();
 }
-
+highscorebtn.onclick = ()=>{
+    highscore();
+}
 var questions = [
     {
     question: "What does HTML stand for?",
@@ -90,12 +98,35 @@ function start(){
 
 };
 
+function endGame(){
+    score = timeLeft;
+    console.log(score);
+    clearInterval(timer);
+    quizbox.style.display = "none";
+    highscoreBox.style.display = "flex";
+
+    submitHS.onclick = () => {
+        console.log(highscoreInput.value);
+        localStorage.setItem("score", score)
+        localStorage.setItem("initials", highscoreInput.value)
+        highscoreBox.style.display = "none";
+        highscore();
+    }
+    
+}
+
+function highscore(){
+    highscorebox2.style.display = "flex";
+    highscorebtn.style.display = "none";
+    highscoreboxText.textContent = localStorage.getItem("initials") + "'s score is: " + localStorage.getItem("score")
+}
 
 function next(){
     currentQuestion++;
 
     if (currentQuestion > questions.length -1){
-        
+        endGame();
+        return;
     }
     
     var questiontitle = currentQuestion + 1;
@@ -159,5 +190,5 @@ function incorrect() {
 
 function correct() {
     console.log(currentQuestion);
-    next()
+    next();
 }
